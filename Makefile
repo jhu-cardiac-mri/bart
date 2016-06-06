@@ -195,7 +195,7 @@ endif
 
 ifeq ($(MAKESTAGE),1)
 .PHONY: doc/commands.txt $(TARGETS)
-default all clean allclean distclean doc/commands.txt doxygen test utest $(TARGETS):
+default all clean allclean distclean doc/commands.txt doxygen test utest gputest $(TARGETS):
 	make MAKESTAGE=2 $(MAKECMDGOALS)
 else
 
@@ -444,6 +444,7 @@ include $(root)/tests/*.mk
 
 test:	${TESTS}
 
+gputest: ${TESTS_GPU}
 
 # unit tests
 
